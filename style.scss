@@ -13,7 +13,8 @@ body {
     font-size: 16px;
     color: #4a919e;
   }
-  p {
+  p,
+  a {
     font-size: 20px;
   }
 }
@@ -142,6 +143,62 @@ body {
     }
     &:hover::before {
       width: 100%;
+    }
+  }
+}
+
+// STYLE 5
+.style5 {
+  a {
+    text-decoration: none;
+    background: linear-gradient(
+        to right,
+        rgba(100, 200, 200, 1),
+        rgba(100, 200, 200, 1)
+      ),
+      linear-gradient(
+        to right,
+        rgba(255, 0, 0, 1),
+        rgba(255, 0, 180, 1),
+        rgba(0, 100, 200, 1)
+      );
+    background-size: 100% 3px, 0, 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 3s ease-in-out;
+    &:hover {
+      background-size: 0 3px, 100% 3px;
+    }
+    &:visited {
+      color: inherit;
+    }
+  }
+}
+
+// STYLE 6
+.style6 {
+  a {
+    position: relative;
+    text-decoration: none;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      border-radius: 4px;
+      background-color: #ce6a6b;
+      bottom: -2px;
+      left: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+    &:hover::before {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+    &:visited {
+      color: inherit;
     }
   }
 }
